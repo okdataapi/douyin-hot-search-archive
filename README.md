@@ -49,7 +49,7 @@ python3 archive.py --board weibo   # 微博热搜；还有 bilibili、xiaohongsh
 | B站热门 | [`bilibili.trends.list`](https://okdata.online/zh/apis/bilibili/trends/list/) | $0.002 |
 | 小红书热点 | [`xiaohongshu.trends.list`](https://okdata.online/zh/apis/xiaohongshu/trends/list/) | $0.02 |
 
-每天抓一次抖音：一个月约 $0.06。每小时抓一次：一个月约 $1.44。失败不扣钱。价格以
+每天抓一次抖音：一个月约 $0.06。每小时抓一次：一个月约 $1.44。请求到了数据源但出错的那次也照常计费。价格以
 [prices.json](https://github.com/okdataapi/okdata/blob/main/docs/prices.json) 为准。
 
 ## 说明
@@ -68,7 +68,7 @@ python3 archive.py --board weibo   # 微博热搜；还有 bilibili、xiaohongsh
 Archive the Douyin hot search board every day into CSV files (one per Beijing-time day), with a GitHub Action, so
 you build your own searchable history. Also works for the Weibo hot search, the Bilibili popular board and
 Xiaohongshu hot topics. One Python 3.9+ file, standard library only, no Douyin account or cookies. Each snapshot
-costs $0.002 (Xiaohongshu $0.02); failed calls are free.
+costs $0.002 (Xiaohongshu $0.02), and a snapshot the data source fails on is charged too.
 
 Fork the repo, add an `OKDATA_API_KEY` secret ([sign up](https://okdata.online/signup/?src=gh-douyin-hot-search-archive)),
 enable Actions. Unofficial. MIT licence.
