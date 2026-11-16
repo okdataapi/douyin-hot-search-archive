@@ -48,7 +48,8 @@ class ApiError(Exception):
 
 
 def fetch_board(endpoint: str, key: str, sleep: Callable[[float], None] = time.sleep) -> Dict[str, Any]:
-    """One paid call; retries reuse the Idempotency-Key so a retry is never charged twice."""
+    """One paid call; retries reuse the Idempotency-Key, so a lost answer is not charged twice (a retry after a
+    data-source failure may be)."""
     headers = {"Authorization": f"Bearer {key}", "Idempotency-Key": str(uuid.uuid4()), "Accept": "application/json",
                "User-Agent": f"{SOURCE}/{VERSION}"}
     url = f"{API}/v1/{endpoint.replace('.', '/')}"
@@ -67,7 +68,8 @@ def _http_error(exc: HTTPError) -> ApiError:
 
 
 def request_json(url: str, headers: Dict[str, str], sleep: Callable[[float], None] = time.sleep) -> Dict[str, Any]:
-    """GET with up to 2 retries on the same Idempotency-Key, so a retry is never charged twice. After a lost
+    """GET with up to 2 retries on the same Idempotency-Key: a lost answer is replayed, not charged again, but a
+    retry after a data-source failure may be charged again. After a lost
     answer the call may still be running on the server: wait for it, and if we give up, say the charge is unknown."""
     retries, waits, ambiguous = 0, 0, False
     while True:
