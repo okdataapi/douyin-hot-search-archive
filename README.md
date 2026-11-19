@@ -49,7 +49,7 @@ python3 archive.py --board weibo   # 微博热搜；还有 bilibili、xiaohongsh
 | B站热门 | [`bilibili.trends.list`](https://okdata.online/zh/apis/bilibili/trends/list/) | $0.002 |
 | 小红书热点 | [`xiaohongshu.trends.list`](https://okdata.online/zh/apis/xiaohongshu/trends/list/) | $0.02 |
 
-每天抓一次抖音：一个月约 $0.06。每小时抓一次：一个月约 $1.44。请求到了数据源但出错的那次也照常计费。价格以
+每天抓一次抖音：一个月约 $0.06。每小时抓一次：一个月约 $1.44。价格以
 [prices.json](https://github.com/okdataapi/okdata/blob/main/docs/prices.json) 为准。
 
 ## 说明
