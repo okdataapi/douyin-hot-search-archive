@@ -44,18 +44,18 @@ python3 archive.py --board weibo   # 微博热搜；还有 bilibili、xiaohongsh
 
 | 榜单 | 接口 | 每次 |
 |---|---|---|
-| 抖音热搜 | [`douyin.trends.list`](https://okdata.online/zh/apis/douyin/trends/list/) | $0.002 |
-| 微博热搜 | [`weibo.trends.list`](https://okdata.online/zh/apis/weibo/trends/list/) | $0.002 |
-| B站热门 | [`bilibili.trends.list`](https://okdata.online/zh/apis/bilibili/trends/list/) | $0.002 |
-| 小红书热点 | [`xiaohongshu.trends.list`](https://okdata.online/zh/apis/xiaohongshu/trends/list/) | $0.02 |
+| 抖音热搜 | [`douyin.trends.list`](https://okdata.online/zh/apis/douyin/trends/list/?src=gh-douyin-hot-search-archive) | $0.002 |
+| 微博热搜 | [`weibo.trends.list`](https://okdata.online/zh/apis/weibo/trends/list/?src=gh-douyin-hot-search-archive) | $0.002 |
+| B站热门 | [`bilibili.trends.list`](https://okdata.online/zh/apis/bilibili/trends/list/?src=gh-douyin-hot-search-archive) | $0.002 |
+| 小红书热点 | [`xiaohongshu.trends.list`](https://okdata.online/zh/apis/xiaohongshu/trends/list/?src=gh-douyin-hot-search-archive) | $0.02 |
 
 每天抓一次抖音：一个月约 $0.06。每小时抓一次：一个月约 $1.44。价格以
 [prices.json](https://github.com/okdataapi/okdata/blob/main/docs/prices.json) 为准。
 
 ## 说明
 
-- 这是 [okdata](https://okdata.online/zh/) 的示例项目，不是抖音或字节跳动的官方项目。脚本只调用 okdata 的接口，本身没有爬虫。
-- 只看一眼现在的热搜，不想存档：[okdata.online/zh/tools/hot-search](https://okdata.online/zh/tools/hot-search/)。
+- 这是 [okdata](https://okdata.online/zh/?src=gh-douyin-hot-search-archive) 的示例项目，不是抖音或字节跳动的官方项目。脚本只调用 okdata 的接口，本身没有爬虫。
+- 只看一眼现在的热搜，不想存档：[okdata.online/zh/tools/hot-search](https://okdata.online/zh/tools/hot-search/?src=gh-douyin-hot-search-archive)。
 - 在 AI 里直接问热搜（Claude Code、Cursor 等）：接 okdata 的远程 MCP `https://api.okdata.online/mcp`，或装
   [okdataapi/skills](https://github.com/okdataapi/skills) 里的 `okdata-trends`。
 - 测试：`python3 -m unittest discover -s tests`（本地模拟服务器，不联网、不花钱）。
